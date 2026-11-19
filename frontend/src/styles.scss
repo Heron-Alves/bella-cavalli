@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Bella Cavalli — Identidade visual */
+
+:root {
+  --color-champagne: #f5dfce;
+  --color-nude: #d7ae91;
+  --color-gold: #c99550;
+  --color-wine: #710d25;
+  --color-ivory: #fff9f4;
+  --color-text: #42272b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ivory);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
