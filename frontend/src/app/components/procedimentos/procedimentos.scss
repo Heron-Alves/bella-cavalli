@@ -1,0 +1,176 @@
+
+/* SEÇÃO DE PROCEDIMENTOS */
+
+.procedimentos-section {
+  padding: 90px 24px;
+  background: var(--color-ivory);
+  scroll-margin-top: 110px;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+
+  span {
+    color: var(--color-gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 5vw, 50px);
+    font-weight: 400;
+    color: var(--color-wine);
+    margin: 18px 0;
+  }
+
+  p {
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+}
+
+.procedimentos-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.procedimento-card {
+  background: #ffffff;
+  border: 1px solid #ead8c9;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(66, 39, 43, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(66, 39, 43, 0.12);
+  }
+}
+
+.card-image {
+  height: 240px;
+  overflow: hidden;
+  background: var(--color-champagne);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.card-content {
+  padding: 25px;
+
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--color-wine);
+    margin: 0 0 14px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+}
+
+.details-button {
+  margin-top: 15px;
+  padding: 11px 22px;
+  border: 1px solid var(--color-wine);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--color-wine);
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-wine);
+    color: #ffffff;
+  }
+}
+
+.card-details {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #ead8c9;
+
+  h4 {
+    color: var(--color-wine);
+    margin: 0 0 10px;
+  }
+}
+
+.schedule-button {
+  display: block;
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 25px;
+  background: var(--color-wine);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    background: #55091c;
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .procedimentos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .procedimentos-section {
+    padding: 65px 18px;
+  }
+
+  .procedimentos-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .card-image {
+    height: 230px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+}
+
+
+.details-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.details-button:focus-visible,
+.schedule-button:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}

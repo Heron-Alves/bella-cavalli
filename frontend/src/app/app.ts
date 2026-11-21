@@ -1,10 +1,11 @@
 
 import { Component, signal } from '@angular/core';
+import { Procedimentos } from './components/procedimentos/procedimentos';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [Procedimentos],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

@@ -1,0 +1,79 @@
+
+<section id="procedimentos" class="procedimentos-section">
+
+  <div class="section-heading">
+    <span>BELLA CAVALLI • BELEZA & BEM-ESTAR</span>
+
+    <h2>Nossos Procedimentos</h2>
+
+    <p>
+      Descubra nossos tratamentos e reserve um momento
+      especial para cuidar de você.
+    </p>
+  </div>
+
+  <div class="procedimentos-grid">
+
+    @for (procedimento of procedimentos; track procedimento.id) {
+
+      <article class="procedimento-card">
+
+        <!-- Imagem do procedimento -->
+        <div class="card-image">
+          <img
+            [src]="procedimento.imagem"
+            [alt]="procedimento.nome"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Informações principais -->
+        <div class="card-content">
+
+          <h3>{{ procedimento.nome }}</h3>
+
+          <p>{{ procedimento.descricao }}</p>
+
+          <!-- Botão para expandir informações -->
+          
+            <button
+                type="button"
+                class="details-button"
+                [attr.aria-expanded]="estaAberto(procedimento.id)"
+                (click)="toggleDetalhes(procedimento.id)"
+                >
+                <span>
+                    {{ estaAberto(procedimento.id) ? 'Ver menos' : 'Saiba mais' }}
+                </span>
+
+                <span aria-hidden="true">
+                    {{ estaAberto(procedimento.id) ? '−' : '+' }}
+                </span>
+            </button>
+
+          <!-- Informações adicionais -->
+          @if (estaAberto(procedimento.id)) {
+
+            <div class="card-details">
+
+              <h4>Benefícios do procedimento</h4>
+
+              <p>{{ procedimento.beneficios }}</p>
+
+              <a
+                href="#agendamento"
+                class="schedule-button"
+              >
+                Agendar procedimento
+              </a>
+
+            </div>
+          }
+
+        </div>
+
+      </article>
+    }
+
+  </div>
+</section>

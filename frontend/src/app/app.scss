@@ -1,4 +1,8 @@
 
+/* =========================================
+   BELLA CAVALLI — CABEÇALHO
+========================================= */
+
 .header {
   background: var(--color-champagne);
   border-bottom: 1px solid var(--color-gold);
@@ -10,7 +14,7 @@
 .header-container {
   max-width: 1200px;
   min-height: 90px;
-  margin: auto;
+  margin: 0 auto;
   padding: 12px 24px;
 
   display: flex;
@@ -19,11 +23,15 @@
   gap: 24px;
 }
 
-.brand img {
-  display: block;
-  width: 170px;
-  max-width: 100%;
-  height: auto;
+.brand {
+  flex-shrink: 0;
+
+  img {
+    display: block;
+    width: 170px;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .navigation {
@@ -43,16 +51,26 @@
   }
 }
 
-.booking-button,
+/* Botão do cabeçalho */
+
+.navigation .booking-button,
 .welcome-button {
   display: inline-block;
   background: var(--color-wine);
-  color: white !important;
-  border-radius: 30px;
+  color: #ffffff;
   padding: 13px 20px;
+  border-radius: 30px;
   text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
+  transition: background 0.2s, transform 0.2s;
+
+  &:hover {
+    background: #55091c;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
 }
 
 .menu-toggle {
@@ -64,42 +82,111 @@
   cursor: pointer;
 }
 
+/* =========================================
+   BANNER PRINCIPAL — HERO
+========================================= */
+
 .welcome {
-  min-height: 550px;
-  padding: 90px 24px;
-  background: linear-gradient(
-    135deg,
-    var(--color-champagne),
-    var(--color-ivory)
-  );
-
-  display: flex;
-  flex-direction: column;
+  min-height: 570px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  background: var(--color-champagne);
+  overflow: hidden;
+  scroll-margin-top: 100px;
+}
 
-  h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(44px, 7vw, 76px);
-    font-weight: 400;
-    margin: 0;
+.welcome-content {
+  padding: 70px 35px 70px max(
+    32px,
+    calc((100vw - 1200px) / 2)
+  );
+}
+
+.welcome-label {
+  color: var(--color-wine);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.welcome-content h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin: 24px 0;
+
+  span {
+    display: block;
     color: var(--color-wine);
-  }
-
-  p {
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--color-gold);
-  }
-
-  h2 {
-    font-family: Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(22px, 3vw, 32px);
-    margin: 28px 0;
+    font-style: italic;
   }
 }
+
+.welcome-content p {
+  max-width: 470px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.secondary-button {
+  display: inline-block;
+  padding: 13px 18px;
+  border: 1px solid var(--color-wine);
+  border-radius: 30px;
+  color: var(--color-wine);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--color-wine);
+    color: #ffffff;
+  }
+}
+
+/* Imagem do banner */
+
+.welcome-image {
+  height: 100%;
+  min-height: 570px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      var(--color-champagne),
+      transparent 30%
+    );
+    pointer-events: none;
+  }
+}
+
+/* =========================================
+   SEÇÕES PROVISÓRIAS
+========================================= */
 
 .placeholder-section {
   padding: 90px 24px;
@@ -112,7 +199,12 @@
   }
 }
 
+/* =========================================
+   RESPONSIVIDADE — CELULAR E TABLET
+========================================= */
+
 @media (max-width: 900px) {
+
   .header-container {
     min-height: 75px;
     flex-wrap: wrap;
@@ -141,10 +233,66 @@
       padding: 14px 10px;
       text-align: center;
     }
+
+    .booking-button {
+      margin: 10px 0;
+    }
   }
 
+  /* Banner no celular */
+
   .welcome {
-    min-height: 460px;
-    padding: 65px 20px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .welcome-content {
+    padding: 65px 24px;
+    text-align: center;
+  }
+
+  .welcome-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .welcome-actions {
+    justify-content: center;
+  }
+
+  .welcome-image {
+    min-height: 320px;
+    height: 320px;
+
+    &::after {
+      background: linear-gradient(
+        180deg,
+        var(--color-champagne),
+        transparent 35%
+      );
+    }
+  }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 480px) {
+
+  .header-container {
+    padding: 10px 16px;
+  }
+
+  .welcome-content h1 {
+    font-size: 36px;
+  }
+
+  .welcome-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .welcome-button,
+  .secondary-button {
+    width: 100%;
   }
 }

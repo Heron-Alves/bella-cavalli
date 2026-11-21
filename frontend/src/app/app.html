@@ -45,14 +45,41 @@
 </header>
 
 <main>
+  
   <section id="inicio" class="welcome">
-    <h1>Bella Cavalli</h1>
-    <p>Beleza & Bem-Estar</p>
-    <h2>Um momento especial de cuidado para você.</h2>
+    <div class="welcome-content">
+      <span class="welcome-label">
+        BELLA CAVALLI • BELEZA & BEM-ESTAR
+      </span>
 
-    <a href="#agendamento" class="welcome-button">
-      Agende seu horário
-    </a>
+      <h1>
+        Cuidado que valoriza
+        <span>sua beleza natural.</span>
+      </h1>
+
+      <p>
+        Reserve um momento para você.
+        Conheça nossos procedimentos de estética
+        e bem-estar em um ambiente acolhedor.
+      </p>
+
+      <div class="welcome-actions">
+        <a href="#agendamento" class="welcome-button">
+          Agende seu horário
+        </a>
+
+        <a href="#procedimentos" class="secondary-button">
+          Conheça nossos procedimentos
+        </a>
+      </div>
+    </div>
+
+    <div class="welcome-image">
+      <img
+        src="/images/banner-massagem.jpg"
+        alt="Ambiente de relaxamento e bem-estar"
+      />
+    </div>
   </section>
 
   <section id="sobre" class="placeholder-section">
@@ -60,10 +87,7 @@
     <p>Em breve, conheça nosso espaço.</p>
   </section>
 
-  <section id="procedimentos" class="placeholder-section">
-    <h2>Nossos procedimentos</h2>
-    <p>Em breve, nossos serviços.</p>
-  </section>
+  <app-procedimentos />
 
   <section id="agendamento" class="placeholder-section">
     <h2>Agende seu horário</h2>
