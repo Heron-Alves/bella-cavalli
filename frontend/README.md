@@ -1,59 +1,142 @@
-# Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.24.
+# Bella Cavalli — Beleza & Bem-Estar 🌹
 
-## Development server
+Aplicação web desenvolvida para uma profissional da área
+de estética e bem-estar.
 
-To start a local development server, run:
+O projeto tem como objetivo apresentar os procedimentos
+oferecidos e, futuramente, disponibilizar um sistema de
+agendamento online com gerenciamento de horários.
 
-```bash
-ng serve
+## 🚀 Sobre o projeto
+
+A Bella Cavalli está sendo desenvolvida de forma
+incremental, com foco em responsividade, organização
+do código e experiência do usuário.
+
+O projeto também faz parte da minha evolução
+profissional como desenvolvedor Full Stack.
+
+## 💻 Tecnologias utilizadas
+
+### Front-end
+- Angular 21
+- TypeScript
+- HTML
+- SCSS
+
+### Versionamento
+- Git
+- GitHub
+
+### Back-end (planejado)
+- PHP
+- Laravel
+- Banco de dados a definir
+
+## ✅ Funcionalidades implementadas
+
+- Estrutura inicial da aplicação Angular
+- Página inicial responsiva
+- Identidade visual personalizada
+- Navegação adaptada para dispositivos móveis
+- Catálogo com 8 procedimentos estéticos
+- Cartões interativos com informações dos serviços
+- Organização dos procedimentos em arquivo de dados
+- Componentização da interface
+
+## 🔜 Próximas funcionalidades
+
+- [ ] Formulário de agendamento online
+- [ ] Seleção de procedimentos
+- [ ] Calendário com datas disponíveis
+- [ ] Gerenciamento de horários
+- [ ] Persistência dos agendamentos
+- [ ] Painel administrativo da profissional
+- [ ] Integração com WhatsApp
+- [ ] Integração entre Angular e Laravel
+
+## 🎨 Identidade visual
+
+O projeto utiliza uma identidade visual elegante,
+com as seguintes cores:
+
+- Champanhe
+- Dourado
+- Vinho
+- Marfim
+
+## 📂 Estrutura do projeto
+
+```text
+bella-cavalli/
+├── frontend/
+│   ├── public/
+│   │   └── images/
+│   └── src/
+│       └── app/
+│           ├── components/
+│           └── core/
+│               └── data/
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ⚙️ Executando localmente
 
-## Code scaffolding
+### Pré-requisitos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js compatível com Angular 21
+- npm
+- Angular CLI
 
-```bash
-ng generate component component-name
-```
+### Instalação
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Clone o repositório:
 
 ```bash
-ng build
+git clone https://github.com/Heron-Alves/bella-cavalli.git
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Entre na pasta do front-end:
 
 ```bash
-ng test
+cd bella-cavalli/frontend
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Instale as dependências:
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Inicie o servidor:
 
-## Additional Resources
+```bash
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Acesse:
+
+http://localhost:4200
+
+## 📈 Evolução do projeto
+
+O desenvolvimento está sendo realizado por etapas,
+com commits no GitHub para acompanhar a evolução
+das funcionalidades.
+
+A próxima etapa será a implementação da interface
+de agendamento online.
+
+## 👨‍💻 Desenvolvedor
+
+**Heron Alves**
+
+Desenvolvedor Backend & Full Stack
+
+- GitHub: https://github.com/Heron-Alves
+- LinkedIn: https://www.linkedin.com/in/heron-alves-542015216/
+
+## 📌 Status
+
+🚧 Projeto em desenvolvimento.
