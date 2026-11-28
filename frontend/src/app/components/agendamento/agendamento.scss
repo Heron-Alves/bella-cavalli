@@ -1,0 +1,206 @@
+
+.agendamento {
+  padding: 90px 20px;
+  background: #f8f2e9;
+
+  &__container {
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h2 {
+      color: #650b2a;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin: 12px 0;
+    }
+
+    p {
+      color: #625a58;
+      line-height: 1.6;
+    }
+  }
+
+  &__eyebrow {
+    color: #ad854b;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fffdf9;
+    border: 1px solid #e9dac6;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(72, 24, 38, 0.08);
+  }
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+
+  label {
+    color: #650b2a;
+    font-weight: 600;
+  }
+
+  select,
+  input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dac8b7;
+    border-radius: 9px;
+    background: white;
+    color: #39272d;
+    font: inherit;
+  }
+
+  small {
+    color: #766c69;
+    line-height: 1.5;
+  }
+}
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.horario {
+  padding: 14px 10px;
+  border: 1px solid #d9bd9d;
+  border-radius: 9px;
+  background: #fffaf3;
+  color: #650b2a;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s ease;
+
+  &:hover {
+    background: #f1e4d3;
+  }
+
+  &--ativo {
+    background: #650b2a;
+    border-color: #650b2a;
+    color: white;
+
+    &:hover {
+      background: #7a1436;
+    }
+  }
+}
+
+.resumo {
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #f8f2e9;
+  border-radius: 10px;
+
+  h3 {
+    margin-top: 0;
+    color: #650b2a;
+  }
+
+  p {
+    margin: 8px 0;
+  }
+}
+
+.botao-agendar {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #650b2a;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 600px) {
+  .agendamento {
+    padding: 60px 15px;
+
+    &__card {
+      padding: 24px 18px;
+    }
+  }
+
+  .horarios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.horario {
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    background: #eee8e2;
+    color: #8b8580;
+    border-color: #ddd4cc;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #ad854b;
+    outline-offset: 3px;
+  }
+}
+
+
+.dados-cliente {
+  margin: 35px 0;
+  padding-top: 25px;
+  border-top: 1px solid #e9dac6;
+
+  h3 {
+    margin-bottom: 8px;
+    color: #650b2a;
+    font-size: 1.4rem;
+  }
+
+  > p {
+    margin-bottom: 25px;
+    color: #625a58;
+    line-height: 1.6;
+  }
+}
+
+.campo {
+  textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dac8b7;
+    border-radius: 9px;
+    background: white;
+    color: #39272d;
+    font: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  textarea {
+    &:focus-visible {
+      outline: 2px solid #ad854b;
+      outline-offset: 2px;
+    }
+  }
+}

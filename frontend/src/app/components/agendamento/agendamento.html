@@ -1,0 +1,139 @@
+<section class="agendamento" id="agendamento">
+    <div class="agendamento__container">
+
+        <div class="agendamento__header">
+            <span class="agendamento__eyebrow">
+                Seu momento de cuidado
+            </span>
+
+            <h2>Agende seu horário</h2>
+
+            <p>
+                Escolha o procedimento, a data e o horário
+                desejados para seu atendimento.
+            </p>
+        </div>
+
+        <div class="agendamento__card">
+
+            <div class="campo">
+                <label for="procedimento">Procedimento</label>
+
+                <select id="procedimento" name="procedimento" [(ngModel)]="procedimentoSelecionado"
+                    (ngModelChange)="alterarProcedimento()">
+                    <option value="">Selecione um procedimento</option>
+
+                    @for (procedimento of procedimentos; track procedimento.id) {
+                    <option [value]="procedimento.nome">
+                        {{ procedimento.nome }}
+                    </option>
+                    }
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data desejada</label>
+
+                <input id="data" name="data" type="date" [min]="dataMinima" [(ngModel)]="dataSelecionada"
+                    (ngModelChange)="alterarData()" />
+            </div>
+
+            <div class="campo">
+                <label>Horário desejado</label>
+
+                <div class="horarios">
+                    @for (horario of horarios; track horario) {
+
+                    <button type="button" class="horario" [class.horario--ativo]="horarioSelecionado() === horario"
+                        [attr.aria-pressed]="horarioSelecionado() === horario" [disabled]="!horarioDisponivel(horario)"
+                        (click)="selecionarHorario(horario)">
+                        {{ horario }}
+                    </button>
+
+                    }
+                </div>
+
+                <small>
+                    Horários demonstrativos. A disponibilidade
+                    será confirmada posteriormente.
+                </small>
+            </div>
+
+            <div class="dados-cliente">
+                <h3>Seus dados</h3>
+
+                <p>
+                    Preencha suas informações para preparar
+                    sua solicitação de agendamento.
+                </p>
+
+                <div class="campo">
+                    <label for="nomeCliente">Nome completo *</label>
+
+                    <input id="nomeCliente" name="nomeCliente" type="text" autocomplete="name"
+                        placeholder="Digite seu nome completo" [(ngModel)]="nomeCliente" minlength="3" required />
+                </div>
+
+                <div class="campo">
+                    <label for="telefoneCliente">WhatsApp *</label>
+
+                    <input id="telefoneCliente" name="telefoneCliente" type="tel" inputmode="numeric" autocomplete="tel"
+                        placeholder="(41) 99999-9999" [ngModel]="telefoneCliente"
+                        (ngModelChange)="formatarTelefone($event)" maxlength="15" required />
+
+                    <small>
+                        Informe seu número com DDD.
+                    </small>
+                </div>
+
+                <div class="campo">
+                    <label for="observacoes">Observações (opcional)</label>
+
+                    <textarea id="observacoes" name="observacoes" rows="4" maxlength="500"
+                        placeholder="Alguma informação que deseja compartilhar?" [(ngModel)]="observacoes"></textarea>
+                </div>
+            </div>
+            @if (formularioValido) {
+
+            <div class="resumo">
+                <h3>Resumo da solicitação</h3>
+                <p>
+                    <strong>Cliente:</strong>
+                    {{ nomeCliente }}
+                </p>
+                <p>
+                    <strong>WhatsApp:</strong>
+                    {{ telefoneCliente }}
+                </p>
+
+                @if (observacoes.trim()) {
+                <p>
+                    <strong>Observações:</strong>
+                    {{ observacoes }}
+                </p>
+                }
+
+                <p>
+                    <strong>Procedimento:</strong>
+                    {{ procedimentoSelecionado }}
+                </p>
+
+                <p>
+                    <strong>Data:</strong>
+                    {{ formatarData(dataSelecionada) }}
+                </p>
+
+                <p>
+                    <strong>Horário:</strong>
+                    {{ horarioSelecionado() }}
+                </p>
+            </div>
+            }
+
+            <button type="button" class="botao-agendar" [disabled]="!formularioValido">
+                Agendamento em desenvolvimento
+            </button>
+
+        </div>
+    </div>
+</section>
